@@ -54,7 +54,7 @@ def rewrite_html(html: str) -> str:
     html = html.replace("url(/", f"url({BASE}/")
     html = html.replace("recroom.network", "RecLora")
     html = html.replace("img.RecLora", "img.recroom.network")
-    html = html.replace("cdn.RecLora", "cdn.recroom.network")
+    html = html.replace("cdn.reclora.network", "cdn.recroom.network")
     html = html.replace("static.RecLora", "static.recroom.network")
     html = html.replace("RecLora", "RecLora")
     html = html.replace("#FF6727", "#16b7b0").replace("#FF5C00", "#0b7180")
