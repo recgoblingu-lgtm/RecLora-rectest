@@ -43,7 +43,7 @@ def rewrite(text: str) -> str:
     if 'reclora-theme.css' not in text and '</head>' in text:
         text = text.replace('</head>', f'<link rel="stylesheet" href="{BASE_PATH}/reclora-theme.css"></head>', 1)
     if 'data-reclora-brand' not in text and '<body>' in text:
-        brand = f'<div data-reclora-brand class="reclora-brand"><a href="{BASE_PATH}/"><img src="{BASE_PATH}/logos/reclora/RecLora%20icon.png" alt="RecLora icon" width="42" height="42"><span>RecLora</span></a></div>'
+        brand = f'<div data-reclora-brand class="reclora-brand"><a href="{BASE_PATH}/"><img src="{BASE_PATH}/logos/RecLora-rectest/RecLora%20icon.png" alt="RecLora icon" width="42" height="42"><span>RecLora</span></a></div>'
         text = text.replace('<body>', '<body>' + brand, 1)
     return text
 
