@@ -14,8 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 QUEUE = ROOT / "profiles.txt"
 MANIFEST = ROOT / "profile-sync-manifest.json"
 RESULTS = ROOT / "profile-sync-results.md"
-BASE = "/reclora"
-ALLOWED_HOSTS = {"reclora.network", "www.reclora.network"}
+BASE = "/rectest"
+ALLOWED_HOSTS = {"recroom.network", "www.recroom.network"}
 USER_RE = re.compile(r"^/user/([^/]+)/?$")
 
 
@@ -41,7 +41,7 @@ def profile_name(url: str) -> str | None:
 
 
 def fetch(url: str) -> str:
-    req = Request(url, headers={"User-Agent": "RecLora-approved-profile-sync/1.0"})
+    req = Request(url, headers={"User-Agent": "DreamRec-approved-profile-sync/1.0"})
     with urlopen(req, timeout=30) as response:
         if response.status != 200:
             raise RuntimeError(f"HTTP {response.status}")
@@ -52,21 +52,21 @@ def rewrite_html(html: str) -> str:
     html = html.replace('href="/', f'href="{BASE}/')
     html = html.replace('src="/', f'src="{BASE}/')
     html = html.replace("url(/", f"url({BASE}/")
-    html = html.replace("reclora.network", "RecLora")
-    html = html.replace("img.RecLora", "img.reclora.network")
-    html = html.replace("cdn.RecLora", "cdn.reclora.network")
-    html = html.replace("static.RecLora", "static.reclora.network")
-    html = html.replace("RecLora", "RecLora")
+    html = html.replace("recroom.network", "DreamRec")
+    html = html.replace("img.DreamRec", "img.recroom.network")
+    html = html.replace("cdn.DreamRec", "cdn.recroom.network")
+    html = html.replace("static.DreamRec", "static.recroom.network")
+    html = html.replace("Rec Room", "DreamRec")
     html = html.replace("#FF6727", "#16b7b0").replace("#FF5C00", "#0b7180")
-    html = html.replace('/logo.png', '/logos/reclora/RecLora%20icon.png')
-    if "reclora-theme.css" not in html and "</head>" in html:
-        html = html.replace("</head>", f'<link rel="stylesheet" href="{BASE}/reclora-theme.css"></head>', 1)
-    if "data-reclora-brand" not in html and "<body>" in html:
+    html = html.replace('/logo.png', '/logos/dreamrec/DreamRec%20icon.png')
+    if "dreamrec-theme.css" not in html and "</head>" in html:
+        html = html.replace("</head>", f'<link rel="stylesheet" href="{BASE}/dreamrec-theme.css"></head>', 1)
+    if "data-dreamrec-brand" not in html and "<body>" in html:
         brand = (
-            f'<div data-reclora-brand class="reclora-brand" role="banner">'
-            f'<a href="{BASE}/" aria-label="RecLora home">'
-            f'<img src="{BASE}/logos/reclora/RecLora%20icon.png" alt="RecLora icon" width="42" height="42">'
-            f'<span>RecLora</span></a><a class="reclora-directory-link" href="{BASE}/reclora-links.html">All links</a></div>'
+            f'<div data-dreamrec-brand class="dreamrec-brand" role="banner">'
+            f'<a href="{BASE}/" aria-label="DreamRec home">'
+            f'<img src="{BASE}/logos/dreamrec/DreamRec%20icon.png" alt="DreamRec icon" width="42" height="42">'
+            f'<span>DreamRec</span></a><a class="dreamrec-directory-link" href="{BASE}/dreamrec-links.html">All links</a></div>'
         )
         html = html.replace("<body>", "<body>" + brand, 1)
     return html
@@ -84,7 +84,7 @@ def save_manifest(manifest: dict) -> None:
 
 
 def append_results(results: list[tuple[str, str, str]]) -> None:
-    lines = ["# RecLora profile sync results", "", f"Last run: {datetime.now(timezone.utc).isoformat()}", "", "| Profile | Status | Detail |", "|---|---|---|"]
+    lines = ["# DreamRec profile sync results", "", f"Last run: {datetime.now(timezone.utc).isoformat()}", "", "| Profile | Status | Detail |", "|---|---|---|"]
     for url, status, detail in results:
         lines.append(f"| `{url}` | **{status}** | {detail.replace('|', '/')[:180]} |")
     RESULTS.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -103,7 +103,7 @@ def main() -> int:
     for url in read_urls():
         name = profile_name(url)
         if not name:
-            results.append((url, "SKIPPED", "Only https://reclora.network/user/<name>/ URLs are accepted"))
+            results.append((url, "SKIPPED", "Only https://recroom.network/user/<name>/ URLs are accepted"))
             continue
         if url in processed and processed[url].get("status") == "success":
             continue

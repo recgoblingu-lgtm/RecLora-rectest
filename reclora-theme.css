@@ -1,16 +1,16 @@
 :root {
-  --reclora-navy: #170d26;
-  --reclora-navy-2: #24133c;
-  --reclora-teal: #6f3f85;
-  --reclora-teal-bright: #9c5bb2;
-  --reclora-aqua: #f5b041;
-  --reclora-text: #fff9ef;
-  --reclora-muted: #d4bfdc;
+  --dreamrec-navy: #061a2a;
+  --dreamrec-navy-2: #0a2940;
+  --dreamrec-teal: #0b7180;
+  --dreamrec-teal-bright: #16b7b0;
+  --dreamrec-aqua: #67eee0;
+  --dreamrec-text: #e6fbf8;
+  --dreamrec-muted: #9bc8ca;
 }
 
 html, body {
-  background: var(--reclora-navy) !important;
-  color: var(--reclora-text) !important;
+  background: var(--dreamrec-navy) !important;
+  color: var(--dreamrec-text) !important;
 }
 
 body {
@@ -19,8 +19,8 @@ body {
 }
 
 header, .MuiAppBar-root, .MuiPaper-root {
-  background-color: var(--reclora-navy-2) !important;
-  color: var(--reclora-text) !important;
+  background-color: var(--dreamrec-navy-2) !important;
+  color: var(--dreamrec-text) !important;
 }
 
 .MuiPaper-root, .MuiCard-root, .MuiCardContent-root {
@@ -28,13 +28,13 @@ header, .MuiAppBar-root, .MuiPaper-root {
 }
 
 .MuiButton-containedPrimary, .MuiButton-contained, .MuiButton-colorPrimary {
-  background-color: var(--reclora-teal) !important;
+  background-color: var(--dreamrec-teal) !important;
   color: #fff !important;
 }
 
 .MuiButton-outlinedPrimary, .MuiButton-outlined {
-  border-color: var(--reclora-teal-bright) !important;
-  color: var(--reclora-aqua) !important;
+  border-color: var(--dreamrec-teal-bright) !important;
+  color: var(--dreamrec-aqua) !important;
 }
 
 .MuiTypography-root, .MuiLink-root, a {
@@ -42,7 +42,7 @@ header, .MuiAppBar-root, .MuiPaper-root {
 }
 
 .MuiLink-root, a:hover {
-  color: var(--reclora-aqua) !important;
+  color: var(--dreamrec-aqua) !important;
 }
 
 .MuiDivider-root, hr {
@@ -54,11 +54,11 @@ header, .MuiAppBar-root, .MuiPaper-root {
 }
 
 ::selection {
-  background: var(--reclora-teal-bright);
-  color: var(--reclora-navy);
+  background: var(--dreamrec-teal-bright);
+  color: var(--dreamrec-navy);
 }
 
-.reclora-brand {
+.dreamrec-brand {
   display: flex;
   align-items: center;
   gap: .75rem;
@@ -66,36 +66,30 @@ header, .MuiAppBar-root, .MuiPaper-root {
   margin: 0 auto;
   padding: .75rem 0;
   font: 700 1.05rem/1 system-ui, sans-serif;
-  color: var(--reclora-text);
+  color: var(--dreamrec-text);
 }
 
-.reclora-brand img {
+.dreamrec-brand img {
   width: 42px;
   height: 42px;
   object-fit: contain;
   border-radius: 10px;
 }
 
-.reclora-brand a {
+.dreamrec-brand a {
   display: inline-flex;
   align-items: center;
   gap: .75rem;
-  color: var(--reclora-text) !important;
+  color: var(--dreamrec-text) !important;
   text-decoration: none;
 }
 
-.reclora-profile-index {
+.dreamrec-profile-index {
   min-height: 100vh;
-  background: var(--reclora-navy);
-  color: var(--reclora-text);
+  background: var(--dreamrec-navy);
+  color: var(--dreamrec-text);
 }
 
-a.reclora-profile-link {
-  color: var(--reclora-aqua) !important;
+a.dreamrec-profile-link {
+  color: var(--dreamrec-aqua) !important;
 }
-
-
-/* RecLora brand layer */
-:root { --reclora-purple: #6f3f85; --reclora-deep: #170d26; --reclora-gold: #f5b041; --reclora-gold-soft: #ffe3a1; }
-.reclora-brand { font-family: Jost, Roboto, Arial, sans-serif; }
-.reclora-brand img { border: 2px solid var(--reclora-gold); box-shadow: 0 0 14px rgba(245,176,65,.35); }
