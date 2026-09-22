@@ -4,7 +4,7 @@ import re
 
 ROOT = Path(__file__).resolve().parent
 BASE = '/RecLora-rectest/'
-ICON = BASE + 'logos/RecLora-rectest/RecLora%20icon.png'
+ICON = BASE + 'logos/reclora/RecLora%20icon.png'
 THEME = BASE + 'reclora-theme.css'
 REPLACEMENTS = (
     ('/rectest/', '/RecLora-rectest/'), ('rectest', 'reclora'),

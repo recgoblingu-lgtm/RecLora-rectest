@@ -58,14 +58,14 @@ def rewrite_html(html: str) -> str:
     html = html.replace("static.RecLora", "static.recroom.network")
     html = html.replace("RecLora", "RecLora")
     html = html.replace("#FF6727", "#16b7b0").replace("#FF5C00", "#0b7180")
-    html = html.replace('/logo.png', '/logos/RecLora-rectest/RecLora%20icon.png')
+    html = html.replace('/logo.png', '/logos/reclora/RecLora%20icon.png')
     if "reclora-theme.css" not in html and "</head>" in html:
         html = html.replace("</head>", f'<link rel="stylesheet" href="{BASE}/reclora-theme.css"></head>', 1)
     if "data-reclora-brand" not in html and "<body>" in html:
         brand = (
             f'<div data-reclora-brand class="reclora-brand" role="banner">'
             f'<a href="{BASE}/" aria-label="RecLora home">'
-            f'<img src="{BASE}/logos/RecLora-rectest/RecLora%20icon.png" alt="RecLora icon" width="42" height="42">'
+            f'<img src="{BASE}/logos/reclora/RecLora%20icon.png" alt="RecLora icon" width="42" height="42">'
             f'<span>RecLora</span></a><a class="reclora-directory-link" href="{BASE}/reclora-links.html">All links</a></div>'
         )
         html = html.replace("<body>", "<body>" + brand, 1)
