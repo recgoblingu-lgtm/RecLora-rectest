@@ -12,3 +12,7 @@ This repository is a static, route-preserving copy of the existing `rectest` rep
 - Preserved the original route/page content structure and local assets.
 
 This is a static site: serve the repository root with any static file server or deploy it to GitHub Pages.
+
+## Sample content policy
+
+This copy intentionally retains one editable account (`user/Account`), one editable room (`room/RecCenter`), and one editable event page (`events/`). The other account, room, and event route families were removed to keep this repository manageable and easy to customize.
