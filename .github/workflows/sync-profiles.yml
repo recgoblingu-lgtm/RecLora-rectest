@@ -43,6 +43,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profiles.txt profile-sync-manifest.json profile-sync-results.md user dreamrec-links.html dreamrec-links tools_rebrand.py tools_finalize.py
-          git diff --cached --quiet || git commit -m "Sync approved DreamRec profiles"
+          git add profiles.txt profile-sync-manifest.json profile-sync-results.md user reclora-links.html reclora-links tools_rebrand.py tools_finalize.py
+          git diff --cached --quiet || git commit -m "Sync approved RecLora profiles"
           git push

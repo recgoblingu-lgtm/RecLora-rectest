@@ -5,7 +5,7 @@ This repository is a static, route-preserving copy of the existing `rectest` rep
 ## What changed
 
 - Kept the existing static page and asset structure from `rectest`.
-- Replaced DreamRec / Rec Room site-level branding with RecLora.
+- Replaced the source site's site-level branding with RecLora.
 - Replaced Studio 87 site-level references with Studio Lora.
 - Applied Purple & Gold theme tokens through `reclora-theme.css`.
 - Added the supplied RecLora logo as `logo.png`, `favicon.png`, and the supporting logo variant.
