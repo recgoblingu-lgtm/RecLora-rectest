@@ -1,0 +1,101 @@
+:root {
+  --reclora-navy: #170d26;
+  --reclora-navy-2: #24133c;
+  --reclora-teal: #6f3f85;
+  --reclora-teal-bright: #9c5bb2;
+  --reclora-aqua: #f5b041;
+  --reclora-text: #fff9ef;
+  --reclora-muted: #d4bfdc;
+}
+
+html, body {
+  background: var(--reclora-navy) !important;
+  color: var(--reclora-text) !important;
+}
+
+body {
+  background-image: linear-gradient(145deg, rgba(22,183,176,.08), transparent 42%),
+    linear-gradient(330deg, rgba(10,41,64,.9), rgba(6,26,42,.98)) !important;
+}
+
+header, .MuiAppBar-root, .MuiPaper-root {
+  background-color: var(--reclora-navy-2) !important;
+  color: var(--reclora-text) !important;
+}
+
+.MuiPaper-root, .MuiCard-root, .MuiCardContent-root {
+  border-color: rgba(103,238,224,.28) !important;
+}
+
+.MuiButton-containedPrimary, .MuiButton-contained, .MuiButton-colorPrimary {
+  background-color: var(--reclora-teal) !important;
+  color: #fff !important;
+}
+
+.MuiButton-outlinedPrimary, .MuiButton-outlined {
+  border-color: var(--reclora-teal-bright) !important;
+  color: var(--reclora-aqua) !important;
+}
+
+.MuiTypography-root, .MuiLink-root, a {
+  color: inherit;
+}
+
+.MuiLink-root, a:hover {
+  color: var(--reclora-aqua) !important;
+}
+
+.MuiDivider-root, hr {
+  border-color: rgba(103,238,224,.25) !important;
+}
+
+.MuiSkeleton-root {
+  background-color: rgba(22,183,176,.16) !important;
+}
+
+::selection {
+  background: var(--reclora-teal-bright);
+  color: var(--reclora-navy);
+}
+
+.reclora-brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: .75rem 0;
+  font: 700 1.05rem/1 system-ui, sans-serif;
+  color: var(--reclora-text);
+}
+
+.reclora-brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.reclora-brand a {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  color: var(--reclora-text) !important;
+  text-decoration: none;
+}
+
+.reclora-profile-index {
+  min-height: 100vh;
+  background: var(--reclora-navy);
+  color: var(--reclora-text);
+}
+
+a.reclora-profile-link {
+  color: var(--reclora-aqua) !important;
+}
+
+
+/* RecLora brand layer */
+:root { --reclora-purple: #6f3f85; --reclora-deep: #170d26; --reclora-gold: #f5b041; --reclora-gold-soft: #ffe3a1; }
+.reclora-brand { font-family: Jost, Roboto, Arial, sans-serif; }
+.reclora-brand img { border: 2px solid var(--reclora-gold); box-shadow: 0 0 14px rgba(245,176,65,.35); }
