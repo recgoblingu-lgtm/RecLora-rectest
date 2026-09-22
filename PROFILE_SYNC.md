@@ -1,4 +1,4 @@
-# Approved DreamRec profile sync
+# Approved RecLora profile sync
 
 The repository includes a GitHub Actions workflow that runs approximately every five minutes and processes up to 100 approved public profile URLs per run.
 
@@ -14,7 +14,7 @@ The synchronizer accepts only HTTPS URLs on `recroom.network` or `www.recroom.ne
 
 ## What each run does
 
-The workflow fetches the next 100 URLs that have not already succeeded, verifies that each response is not an obvious 404, saves the profile HTML under `user/<name>/index.html`, applies the DreamRec theme and local DreamRec logo, updates the all-links directory, and records the result in `profile-sync-manifest.json` and `profile-sync-results.md`.
+The workflow fetches the next 100 URLs that have not already succeeded, verifies that each response is not an obvious 404, saves the profile HTML under `user/<name>/index.html`, applies the RecLora theme and local RecLora logo, updates the all-links directory, and records the result in `profile-sync-manifest.json` and `profile-sync-results.md`.
 
 A one-second delay is used between requests. The five-minute schedule is approximate because GitHub Actions scheduled jobs can be delayed during periods of high GitHub load. The workflow also has a manual **Run workflow** button.
 

@@ -37,13 +37,13 @@ def rewrite(text: str) -> str:
     text = text.replace('src="/', f'src="{BASE_PATH}/')
     text = text.replace("url(/", f"url({BASE_PATH}/")
     text = text.replace('https://recroom.network/', f'{BASE_PATH}/')
-    text = text.replace('recroom.network', 'DreamRec')
-    text = text.replace('Rec Room', 'DreamRec')
+    text = text.replace('recroom.network', 'RecLora')
+    text = text.replace('RecLora', 'RecLora')
     text = text.replace('#FF6727', '#16b7b0').replace('#FF5C00', '#0b7180')
-    if 'dreamrec-theme.css' not in text and '</head>' in text:
-        text = text.replace('</head>', f'<link rel="stylesheet" href="{BASE_PATH}/dreamrec-theme.css"></head>', 1)
-    if 'data-dreamrec-brand' not in text and '<body>' in text:
-        brand = f'<div data-dreamrec-brand class="dreamrec-brand"><a href="{BASE_PATH}/"><img src="{BASE_PATH}/logos/dreamrec/DreamRec%20icon.png" alt="DreamRec icon" width="42" height="42"><span>DreamRec</span></a></div>'
+    if 'reclora-theme.css' not in text and '</head>' in text:
+        text = text.replace('</head>', f'<link rel="stylesheet" href="{BASE_PATH}/reclora-theme.css"></head>', 1)
+    if 'data-reclora-brand' not in text and '<body>' in text:
+        brand = f'<div data-reclora-brand class="reclora-brand"><a href="{BASE_PATH}/"><img src="{BASE_PATH}/logos/reclora/RecLora%20icon.png" alt="RecLora icon" width="42" height="42"><span>RecLora</span></a></div>'
         text = text.replace('<body>', '<body>' + brand, 1)
     return text
 
